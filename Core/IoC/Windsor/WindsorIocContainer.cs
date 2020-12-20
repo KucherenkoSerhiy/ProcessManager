@@ -7,18 +7,22 @@
     using Castle.MicroKernel;
     using Castle.MicroKernel.Registration;
     using Castle.Windsor;
+    using Castle.Windsor.MsDependencyInjection;
     using Enum;
     using Interface;
     using Logger;
+    using Microsoft.Extensions.DependencyInjection;
 
     public class WindsorIocContainer: IIoCContainer
     {
         private readonly IWindsorContainer container;
+        private readonly IServiceProvider serviceProvider;
 
-        public WindsorIocContainer()
+        public WindsorIocContainer(IServiceCollection services)
         {
             this.container = new WindsorContainer();
             this.container.Kernel.ComponentRegistered += this.OnComponentRegistered;
+            this.serviceProvider = WindsorRegistrationHelper.CreateServiceProvider(this.container, services);
         }
 
         public void Register(IList<IIoCComponent> components)
@@ -60,6 +64,10 @@
             return this.container.ResolveAll<T>().ToList();
         }
 
+        public IServiceProvider GetServiceProvider() {
+            return this.serviceProvider;
+        } 
+
         private void UpdateComponentDependencies(
             ref ComponentRegistration<object> windsorComponent, 
             IDictionary<string, object> componentDependencies)
@@ -93,12 +101,11 @@
         private void OnComponentRegistered(string key, IHandler handler)
         {
             Type implementation = handler.ComponentModel.Implementation;
-            string str1 = (object) implementation != null ? implementation.FullName : (string) null;
-            Type type = ((IEnumerable<Type>) handler.ComponentModel.Implementation.UnderlyingSystemType.GetInterfaces()).FirstOrDefault<Type>();
-            string str2 = (object) type != null ? type.FullName : (string) null;
-            string str3 = key;
+            string implementationFullName = (object) implementation != null ? implementation.FullName : null;
+            Type type = handler.ComponentModel.Implementation.UnderlyingSystemType.GetInterfaces().FirstOrDefault();
+            string typeFullName = (object) type != null ? type.FullName : null;
 
-            string message = $"Registered component '{str1}' for '{str2}' with name '{str3}'";
+            string message = $"Registered component '{implementationFullName}' for '{typeFullName}' with name '{key}'";
             Logger.Instance.Debug(message);
         }
     }

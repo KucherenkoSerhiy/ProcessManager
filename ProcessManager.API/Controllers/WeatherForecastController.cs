@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ProcessManager.Controllers
+﻿namespace ProcessManager.API.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Dummy;
+    using Logger;
+    using Microsoft.AspNetCore.Mvc;
+
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -16,24 +16,34 @@ namespace ProcessManager.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger logger;
+        private readonly IDummy dummy;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger logger, IDummy dummy)
         {
-            _logger = logger;
+            this.logger = logger;
+            this.dummy = dummy;
         }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            this.logger.Debug($"Called {nameof(WeatherForecastController)}.Get()");
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var weatherForecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+                {
+                    Date = DateTime.Now.AddDays(index),
+                    TemperatureC = rng.Next(-20, 55),
+                    Summary = Summaries[rng.Next(Summaries.Length)]
+                })
+                .ToList();
+            weatherForecasts.Insert(0, new WeatherForecast
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                Date = DateTime.Now.AddDays(1),
+                Summary = this.dummy.Call(),
+                TemperatureC = 20
+            });
+            return weatherForecasts;
         }
     }
 }
