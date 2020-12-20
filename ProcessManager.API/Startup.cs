@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 namespace ProcessManager
 {
     using IoC;
+    using Logger;
 
     public class Startup
     {
@@ -34,6 +35,7 @@ namespace ProcessManager
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProcessManager", Version = "v1" });
             });
 
+            LoggerBootstrapper.Initialize();
             IoCBootstrapper.Initialize(services);
         }
 

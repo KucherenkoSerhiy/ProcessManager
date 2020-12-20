@@ -1,25 +1,15 @@
 ﻿namespace ProcessManager.API._IoCInstaller
 {
-    using System.Collections.Generic;
-    using API.Dummy;
+    using Dummy;
     using Dummy.Impl;
-    using IoC;
-    using IoC.Enum;
     using IoC.Interface;
+    using Microsoft.Extensions.DependencyInjection;
 
     public class Installer: IIoCInstaller
     {
-        public void Install(LifeStyleType defaultLifeStyleType)
+        public void Install(IServiceCollection services)
         {
-            var dummyServices = new List<IIoCComponent>
-            {
-                new IoCComponent<IDummy, Dummy>
-                {
-                    Name = nameof(Dummy),
-                    LifeStyleType = defaultLifeStyleType
-                }
-            };
-            IoCContainerManager.Container.Register(dummyServices);
+            services.AddScoped<IDummy, Dummy>();
         }
     }
 }

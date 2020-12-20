@@ -28,7 +28,7 @@
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            this.logger.Debug($"Called {nameof(WeatherForecastController)}.Get()");
+            this.logger.Error($"Called {nameof(WeatherForecastController)}.Get()");
             var rng = new Random();
             var weatherForecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
                 {

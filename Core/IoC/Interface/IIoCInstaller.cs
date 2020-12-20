@@ -1,9 +1,9 @@
 ﻿namespace IoC.Interface
 {
-    using Enum;
+    using Microsoft.Extensions.DependencyInjection;
 
     public interface IIoCInstaller
     {
-        void Install(LifeStyleType defaultLifeStyleType);
+        void Install(IServiceCollection services);
     }
 }
