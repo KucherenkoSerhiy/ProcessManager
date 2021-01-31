@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Process\Exceptions\" />
-    <Folder Include="Process\Services\" />
+    <Folder Include="Process\Services\_Internal\_Impl\" />
   </ItemGroup>
 
   <ItemGroup>
