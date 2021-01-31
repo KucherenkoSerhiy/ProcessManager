@@ -14,11 +14,11 @@
 
         private static void ExecuteInstallers(IServiceCollection services)
         {
-            var types = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(s => s.GetTypes())
-                .Where(p => typeof(IIoCInstaller).IsAssignableFrom(p) && !p.IsInterface);
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            var types = assemblies.SelectMany(s => s.GetTypes());
+            var installers = types.Where(p => typeof(IIoCInstaller).IsAssignableFrom(p) && !p.IsInterface);
 
-            foreach (var type in types)
+            foreach (var type in installers)
             {
                 var instance = (IIoCInstaller) Activator.CreateInstance(type);
                 instance.Install(services);
