@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logger", "Core\Logger\Logge
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD", "DDD\DDD.csproj", "{9DCF4004-B3E6-4913-9200-0A8B6C131622}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Domain", "ProcessManager.Domain\ProcessManager.Domain.csproj", "{30919AD5-2787-42A9-9B9E-C3E3114D2916}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{9DCF4004-B3E6-4913-9200-0A8B6C131622}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DCF4004-B3E6-4913-9200-0A8B6C131622}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DCF4004-B3E6-4913-9200-0A8B6C131622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30919AD5-2787-42A9-9B9E-C3E3114D2916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30919AD5-2787-42A9-9B9E-C3E3114D2916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30919AD5-2787-42A9-9B9E-C3E3114D2916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30919AD5-2787-42A9-9B9E-C3E3114D2916}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
