@@ -1,0 +1,7 @@
+﻿namespace ProcessManager.Application.Process.Models.Queries.Responses
+{
+    public class GetProcessQueryResponse
+    {
+        public ProcessDto Response { get; set; }
+    }
+}
