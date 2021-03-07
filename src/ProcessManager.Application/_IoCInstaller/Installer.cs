@@ -12,6 +12,7 @@
         public void Install(IServiceCollection services)
         {
             services.AddScoped<IRequestHandler<GetProcessQuery, GetProcessQueryResponse>, GetProcessQueryHandler>();
+            services.AddScoped<IRequestHandler<GetProcessesQuery, GetProcessesQueryResponse>, GetProcessesQueryHandler>();
         }
     }
 }

@@ -18,7 +18,7 @@
         {
             var response = new GetProcessQueryResponse
             {
-                Response = new ProcessDto
+                Process = new ProcessDto
                 {
                     ProcessId = query.Id
                 }

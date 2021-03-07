@@ -2,6 +2,6 @@
 {
     public class GetProcessQueryResponse
     {
-        public ProcessDto Response { get; set; }
+        public ProcessDto Process { get; set; }
     }
 }

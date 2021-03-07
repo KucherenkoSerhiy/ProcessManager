@@ -1,6 +1,7 @@
 ﻿namespace ProcessManager.API.Process.Controllers
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
     using System.Threading.Tasks;
     using Application.Process.Models.Queries;
     using Application.Process.Models.Queries.Responses;
@@ -19,12 +20,31 @@
         }
 
         /// <summary>
-        /// Retrieves a specific process
+        /// Retrieves a process by id
         /// </summary>
-        /// <param name="query"></param>
+        /// <param name="id">id of a process</param>
+        /// <returns></returns>
+        [HttpGet("{id}")]
+        public async Task<ActionResult<GetProcessQueryResponse>> Get(string id)
+        {
+            try
+            {
+                var query = new GetProcessQuery {Id = id};
+                return await this.mediator.Send(query);
+            }
+            catch (Exception ex)
+            {
+                return this.BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Retrieves multiple processes
+        /// </summary>
+        /// <param name="query">Used to specify filters</param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<GetProcessQueryResponse>> Get([FromQuery] GetProcessQuery query)
+        public async Task<ActionResult<GetProcessesQueryResponse>> Get([FromQuery] GetProcessesQuery query)
         {
             try
             {
