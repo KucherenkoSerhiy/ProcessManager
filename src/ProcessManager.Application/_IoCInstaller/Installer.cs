@@ -1,9 +1,11 @@
 ﻿namespace ProcessManager.Application._IoCInstaller
 {
+    using CQRS;
     using IoC.Interface;
     using MediatR;
     using Microsoft.Extensions.DependencyInjection;
     using Process.Handlers;
+    using Process.Models.Commands;
     using Process.Models.Queries;
     using Process.Models.Queries.Responses;
 
@@ -13,6 +15,7 @@
         {
             services.AddScoped<IRequestHandler<GetProcessQuery, GetProcessQueryResponse>, GetProcessQueryHandler>();
             services.AddScoped<IRequestHandler<GetProcessesQuery, GetProcessesQueryResponse>, GetProcessesQueryHandler>();
+            services.AddScoped<IRequestHandler<CreateProcessCommand, CommandResponse>, CreateProcessCommandHandler>();
         }
     }
 }

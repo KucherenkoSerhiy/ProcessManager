@@ -3,8 +3,10 @@
     using System;
     using System.ComponentModel.DataAnnotations;
     using System.Threading.Tasks;
+    using Application.Process.Models.Commands;
     using Application.Process.Models.Queries;
     using Application.Process.Models.Queries.Responses;
+    using CQRS;
     using MediatR;
     using Microsoft.AspNetCore.Mvc;
 
@@ -49,6 +51,24 @@
             try
             {
                 return await this.mediator.Send(query);
+            }
+            catch (Exception ex)
+            {
+                return this.BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Creates a new process
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
+        [HttpPost("create")]
+        public async Task<ActionResult<CommandResponse>> Create([FromBody] CreateProcessCommand command)
+        {
+            try
+            {
+                return await this.mediator.Send(command);
             }
             catch (Exception ex)
             {
