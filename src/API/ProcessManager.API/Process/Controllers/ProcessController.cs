@@ -1,7 +1,6 @@
 ﻿namespace ProcessManager.API.Process.Controllers
 {
     using System;
-    using System.ComponentModel.DataAnnotations;
     using System.Threading.Tasks;
     using Application.Process.Models.Commands;
     using Application.Process.Models.Queries;
