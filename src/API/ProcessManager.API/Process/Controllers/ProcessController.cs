@@ -74,5 +74,18 @@
                 return this.BadRequest(ex.Message);
             }
         }
+
+        [HttpPatch("update")]
+        public async Task<ActionResult<CommandResponse>> Update([FromBody] UpdateProcessCommand command)
+        {
+            try
+            {
+                return await this.mediator.Send(command);
+            }
+            catch (Exception ex)
+            {
+                return this.BadRequest(ex.Message);
+            }
+        }
     }
 }
