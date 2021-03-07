@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\IoC\IoC.csproj" />
+    <ProjectReference Include="..\..\Core\IoC\IoC.csproj" />
   </ItemGroup>
 
 </Project>
