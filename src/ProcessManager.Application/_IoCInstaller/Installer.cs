@@ -17,6 +17,7 @@
             services.AddScoped<IRequestHandler<GetProcessesQuery, GetProcessesQueryResponse>, GetProcessesQueryHandler>();
             services.AddScoped<IRequestHandler<CreateProcessCommand, CommandResponse>, CreateProcessCommandHandler>();
             services.AddScoped<IRequestHandler<UpdateProcessCommand, CommandResponse>, UpdateProcessCommandHandler>();
+            services.AddScoped<IRequestHandler<DeleteProcessCommand, CommandResponse>, DeleteProcessCommandHandler>();
         }
     }
 }

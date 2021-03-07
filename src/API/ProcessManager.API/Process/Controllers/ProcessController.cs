@@ -87,5 +87,18 @@
                 return this.BadRequest(ex.Message);
             }
         }
+
+        [HttpDelete("delete")]
+        public async Task<ActionResult<CommandResponse>> Delete([FromBody] DeleteProcessCommand command)
+        {
+            try
+            {
+                return await this.mediator.Send(command);
+            }
+            catch (Exception ex)
+            {
+                return this.BadRequest(ex.Message);
+            }
+        }
     }
 }
