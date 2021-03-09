@@ -1,6 +1,7 @@
 ﻿namespace ProcessManager.Application._IoCInstaller
 {
     using CQRS;
+    using DDD;
     using IoC.Interface;
     using MediatR;
     using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +11,7 @@
     using Process.Models.Commands;
     using Process.Models.Queries;
     using Process.Models.Queries.Responses;
+    using Process.Validators;
 
     public class Installer: IIoCInstaller
     {
@@ -17,6 +19,7 @@
         {
             this.RegisterHandlers(services);
             this.RegisterAppServices(services);
+            this.RegisterValidators(services);
         }
 
         private void RegisterHandlers(IServiceCollection services)
@@ -35,6 +38,15 @@
             services.AddScoped<ICreateProcessAppService, CreateProcessAppService>();
             services.AddScoped<IUpdateProcessAppService, UpdateProcessAppService>();
             services.AddScoped<IDeleteProcessAppService, DeleteProcessAppService>();
+        }
+
+        private void RegisterValidators(IServiceCollection services)
+        {
+            services.AddScoped<IValidator<GetProcessQuery>, GetProcessQueryValidator>();
+            services.AddScoped<IValidator<GetProcessesQuery>, GetProcessesQueryValidator>();
+            services.AddScoped<IValidator<CreateProcessCommand>, CreateProcessCommandValidator>();
+            services.AddScoped<IValidator<UpdateProcessCommand>, UpdateProcessCommandValidator>();
+            services.AddScoped<IValidator<DeleteProcessCommand>, DeleteProcessCommandValidator>();
         }
     }
 }
