@@ -1,8 +1,10 @@
 ﻿namespace ProcessManager.Application.Process.Handlers
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
+    using AppServices;
     using MediatR;
     using Models;
     using Models.Queries;
@@ -10,17 +12,19 @@
 
     public class GetProcessesQueryHandler: IRequestHandler<GetProcessesQuery, GetProcessesQueryResponse>
     {
+        private readonly IGetProcessesAppService getProcessesAppService;
+
+        public GetProcessesQueryHandler(IGetProcessesAppService getProcessesAppService)
+        {
+            this.getProcessesAppService = getProcessesAppService;
+        }
+
         public Task<GetProcessesQueryResponse> Handle(GetProcessesQuery request, CancellationToken cancellationToken)
         {
             request.Validate();
             var response = new GetProcessesQueryResponse
             {
-                Processes = new List<ProcessDto>
-                {
-                    new ProcessDto{ProcessId = "1"},
-                    new ProcessDto{ProcessId = "2"},
-                    new ProcessDto{ProcessId = "54"}
-                }
+                Processes = this.getProcessesAppService.Get().ToList()
             };
             return Task.FromResult(response);
         }
