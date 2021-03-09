@@ -12,6 +12,7 @@
     {
         public Task<GetProcessesQueryResponse> Handle(GetProcessesQuery request, CancellationToken cancellationToken)
         {
+            request.Validate();
             var response = new GetProcessesQueryResponse
             {
                 Processes = new List<ProcessDto>

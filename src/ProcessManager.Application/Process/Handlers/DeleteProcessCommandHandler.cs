@@ -10,6 +10,7 @@
     {
         public Task<CommandResponse> Handle(DeleteProcessCommand request, CancellationToken cancellationToken)
         {
+            request.Validate();
             var response = new CommandResponse
             {
                 Data = "data"

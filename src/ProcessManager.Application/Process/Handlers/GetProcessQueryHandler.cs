@@ -9,13 +9,9 @@
 
     public class GetProcessQueryHandler: IRequestHandler<GetProcessQuery, GetProcessQueryResponse>
     {
-        public GetProcessQueryHandler()
-        {
-            
-        }
-
         public Task<GetProcessQueryResponse> Handle(GetProcessQuery query, CancellationToken cancellationToken)
         {
+            query.Validate();
             var response = new GetProcessQueryResponse
             {
                 Process = new ProcessDto
