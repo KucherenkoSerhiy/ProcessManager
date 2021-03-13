@@ -1,9 +1,12 @@
 ﻿namespace ProcessManager.Domain.Process.Enums
 {
-    public enum SubProcessStatus
+    public enum ProcessStatus
     {
+        Default,
+        NotStarted,
         Running,
+        Paused,
         Success,
-        Fail
+        Error
     }
 }

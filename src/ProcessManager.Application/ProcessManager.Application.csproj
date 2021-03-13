@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Core\IoC\IoC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Process\Enums\" />
+  </ItemGroup>
+
 </Project>

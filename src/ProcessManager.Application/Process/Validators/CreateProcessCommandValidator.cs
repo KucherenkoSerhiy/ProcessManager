@@ -10,7 +10,7 @@
         {
             valueToValidate.Requires().IsNotNull();
             valueToValidate.Process.Requires().IsNotNull();
-            valueToValidate.Process.ProcessId.Requires().IsNotNullOrWhiteSpace();
+            valueToValidate.Process.Name.Requires().IsNotNullOrWhiteSpace();
         }
     }
 }

@@ -11,7 +11,8 @@ namespace ProcessManager.Application.Process.Validators
         {
             valueToValidate.Requires().IsNotNull();
             valueToValidate.Process.Requires().IsNotNull();
-            valueToValidate.Process.ProcessId.Requires().IsNotNullOrWhiteSpace();
+            valueToValidate.Process.Id.Requires().IsNotNullOrWhiteSpace();
+            valueToValidate.Process.Name.Requires().IsNotNullOrWhiteSpace();
         }
     }
 }

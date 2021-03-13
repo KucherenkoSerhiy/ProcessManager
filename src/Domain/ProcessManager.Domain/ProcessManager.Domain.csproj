@@ -6,11 +6,12 @@
 
   <ItemGroup>
     <Folder Include="Process\Exceptions\" />
-    <Folder Include="Process\Services\_Internal\_Impl\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\DDD\DDD.csproj" />
+    <ProjectReference Include="..\..\Core\IoC\IoC.csproj" />
+    <ProjectReference Include="..\..\Core\NativeObjects.Extensions\NativeObjects.Extensions.csproj" />
   </ItemGroup>
 
 </Project>
