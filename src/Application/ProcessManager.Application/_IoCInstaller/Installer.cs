@@ -2,12 +2,17 @@
 {
     using CQRS;
     using DDD;
+    using Domain.Process.Models;
     using IoC.Interface;
     using MediatR;
     using Microsoft.Extensions.DependencyInjection;
+    using Patterns;
     using Process.AppServices;
     using Process.AppServices.Impl;
+    using Process.Converters;
+    using Process.Enums;
     using Process.Handlers;
+    using Process.Models;
     using Process.Models.Commands;
     using Process.Models.Queries;
     using Process.Models.Queries.Responses;
@@ -20,6 +25,7 @@
             this.RegisterHandlers(services);
             this.RegisterAppServices(services);
             this.RegisterValidators(services);
+            this.RegisterConverters(services);
         }
 
         private void RegisterHandlers(IServiceCollection services)
@@ -47,6 +53,12 @@
             services.AddScoped<IValidator<CreateProcessCommand>, CreateProcessCommandValidator>();
             services.AddScoped<IValidator<UpdateProcessCommand>, UpdateProcessCommandValidator>();
             services.AddScoped<IValidator<DeleteProcessCommand>, DeleteProcessCommandValidator>();
+        }
+
+        private void RegisterConverters(IServiceCollection services)
+        {
+            services.AddScoped<IConverter<Domain.Process.Enums.ProcessStatus, ProcessStatus>, ProcessStatusConverter>();
+            services.AddScoped<IConverter<Process, ProcessDto>, ProcessConverter>();
         }
     }
 }

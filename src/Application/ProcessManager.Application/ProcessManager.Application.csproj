@@ -10,9 +10,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\CQRS\CQRS.csproj" />
-    <ProjectReference Include="..\Core\DDD\DDD.csproj" />
-    <ProjectReference Include="..\Core\IoC\IoC.csproj" />
+    <ProjectReference Include="..\..\Core\CQRS\CQRS.csproj" />
+    <ProjectReference Include="..\..\Core\DDD\DDD.csproj" />
+    <ProjectReference Include="..\..\Core\IoC\IoC.csproj" />
+    <ProjectReference Include="..\..\Core\Patterns\Patterns.csproj" />
+    <ProjectReference Include="..\..\Domain\ProcessManager.Domain\ProcessManager.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
