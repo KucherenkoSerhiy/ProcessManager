@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{8C2661
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{89935D6B-8AEA-440E-86C3-A5325FB115A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Application", "ProcessManager.Application\ProcessManager.Application.csproj", "{649E26D5-9C4A-4859-9F25-34B8BCA3FEC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Application", "Application\ProcessManager.Application\ProcessManager.Application.csproj", "{649E26D5-9C4A-4859-9F25-34B8BCA3FEC7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS", "Core\CQRS\CQRS.csproj", "{18422914-ECDF-4CE2-B4A3-38C64661AAD6}"
 EndProject
