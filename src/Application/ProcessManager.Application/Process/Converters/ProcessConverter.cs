@@ -1,16 +1,20 @@
 ﻿namespace ProcessManager.Application.Process.Converters
 {
     using Domain.Process.Models;
+    using Domain.Process.Services;
     using Enums;
     using Models;
     using Patterns;
 
     public class ProcessConverter: IConverter<Process, ProcessDto>
     {
+        private readonly IProcessFactory processFactory;
         private readonly IConverter<Domain.Process.Enums.ProcessStatus, ProcessStatus> processStatusConverter;
 
-        public ProcessConverter(IConverter<Domain.Process.Enums.ProcessStatus, ProcessStatus> processStatusConverter)
+        public ProcessConverter(IProcessFactory processFactory, 
+            IConverter<Domain.Process.Enums.ProcessStatus, ProcessStatus> processStatusConverter)
         {
+            this.processFactory = processFactory;
             this.processStatusConverter = processStatusConverter;
         }
 
@@ -29,14 +33,13 @@
 
         public Process ConvertBack(ProcessDto value)
         {
-            return new Process
-            {
-                CreationDate = value.CreationDate,
-                Data = value.Data,
-                Logs = value.Logs,
-                Name = value.Name,
-                Status = this.processStatusConverter.ConvertBack(value.Status)
-            };
+            var converted = this.processFactory.CreateBlank();
+            converted.Name = value.Name;
+            converted.Data = value.Data;
+            converted.CreationDate = value.CreationDate;
+            converted.Logs = value.Logs;
+            converted.Status = this.processStatusConverter.ConvertBack(value.Status);
+            return converted;
         }
     }
 }
