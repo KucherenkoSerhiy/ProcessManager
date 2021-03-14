@@ -2,16 +2,21 @@
 {
     using System.Threading;
     using System.Threading.Tasks;
-    using AppServices.Impl;
+    using AppServices;
     using CQRS;
     using MediatR;
     using Models.Commands;
 
     public class CreateProcessCommandHandler: IRequestHandler<CreateProcessCommand, CommandResponse>
     {
-        private readonly CreateProcessAppService createProcessAppService;
+        private readonly ICreateProcessAppService createProcessAppService;
 
-        public CreateProcessCommandHandler(CreateProcessAppService createProcessAppService)
+        public CreateProcessCommandHandler()
+        {
+            this.createProcessAppService = createProcessAppService;
+        }
+
+        public CreateProcessCommandHandler(ICreateProcessAppService createProcessAppService)
         {
             this.createProcessAppService = createProcessAppService;
         }
