@@ -5,7 +5,7 @@
     using Interface;
     using Microsoft.Extensions.DependencyInjection;
 
-    public class IoCResolver : IIoCResolver
+    public class IoCResolver
     {
         // Static
         private static IoCResolver _instance;
