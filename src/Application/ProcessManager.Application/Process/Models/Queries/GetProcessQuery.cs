@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using DDD;
+    using IoC;
     using MediatR;
     using Responses;
 
@@ -9,6 +10,11 @@
     {
         private readonly IEnumerable<IValidator<GetProcessQuery>> validators;
         public string Id { get; set; }
+
+        public GetProcessQuery()
+        {
+            this.validators = IoCResolver.Instance.ResolveAll<IValidator<GetProcessQuery>>();
+        }
 
         public GetProcessQuery(IEnumerable<IValidator<GetProcessQuery>> validators)
         {
