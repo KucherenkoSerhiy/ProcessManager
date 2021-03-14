@@ -10,6 +10,7 @@
         public void Install(IServiceCollection services)
         {
             services.AddScoped<IProcessFactory, ProcessFactory>();
+            services.AddScoped<IProcessContainer, ProcessContainer>();
         }
     }
 }

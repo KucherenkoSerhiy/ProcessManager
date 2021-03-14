@@ -1,10 +1,7 @@
 ﻿namespace ProcessManager.Application.Process.AppServices.Impl
 {
-    using System;
-    using Converters;
     using Domain.Process.Models;
     using Domain.Process.Services;
-    using Enums;
     using Models;
     using Patterns;
 
