@@ -8,6 +8,8 @@
 
     public class Process: AggregateRoot
     {
+        internal Process(){}
+
         public override string Id => $"{Name}{Status}{CreationDate}".EncodeHexadecimal();
         public string Name { get; set; }
         public ProcessStatus Status { get; set; }

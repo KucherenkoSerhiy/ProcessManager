@@ -9,6 +9,7 @@
         public void Install(IServiceCollection services)
         {
             services.AddScoped<ILogger, Logger>();
+            services.AddSingleton<IIoCResolver, IoCResolver>();
         }
     }
 }

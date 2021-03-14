@@ -2,8 +2,9 @@
 {
     using Models;
 
-    internal interface IProcessFactory
+    public interface IProcessFactory
     {
+        Process CreateBlank();
         Process Create(string name, object data);
     }
 }
