@@ -3,12 +3,15 @@
     using System.Collections.Generic;
     using CQRS;
     using DDD;
+    using IoC;
     using MediatR;
 
     public class UpdateProcessCommand: IRequest<CommandResponse>
     {
         private readonly IEnumerable<IValidator<UpdateProcessCommand>> validators;
         public ProcessDto Process { get; set; }
+
+        public UpdateProcessCommand() : this(IoCResolver.Instance.ResolveAll<IValidator<UpdateProcessCommand>>()){}
 
         public UpdateProcessCommand(IEnumerable<IValidator<UpdateProcessCommand>> validators)
         {

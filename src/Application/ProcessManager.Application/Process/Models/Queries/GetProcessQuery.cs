@@ -11,10 +11,7 @@
         private readonly IEnumerable<IValidator<GetProcessQuery>> validators;
         public string Id { get; set; }
 
-        public GetProcessQuery()
-        {
-            this.validators = IoCResolver.Instance.ResolveAll<IValidator<GetProcessQuery>>();
-        }
+        public GetProcessQuery() : this(IoCResolver.Instance.ResolveAll<IValidator<GetProcessQuery>>()){}
 
         public GetProcessQuery(IEnumerable<IValidator<GetProcessQuery>> validators)
         {
