@@ -1,4 +1,4 @@
-﻿namespace NativeObjects.Extensions
+﻿namespace ProcessManager.Core.NativeObjects.Extensions
 {
     using System;
     using System.Text;

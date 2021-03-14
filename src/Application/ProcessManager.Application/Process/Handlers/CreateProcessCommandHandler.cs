@@ -1,9 +1,9 @@
-﻿namespace ProcessManager.Application.Process.Handlers
+﻿namespace ProcessManager.Process.Application.Process.Handlers
 {
     using System.Threading;
     using System.Threading.Tasks;
     using AppServices;
-    using CQRS;
+    using Core.CQRS;
     using MediatR;
     using Models.Commands;
 
@@ -13,7 +13,7 @@
 
         public CreateProcessCommandHandler()
         {
-            this.createProcessAppService = createProcessAppService;
+            this.createProcessAppService = this.createProcessAppService;
         }
 
         public CreateProcessCommandHandler(ICreateProcessAppService createProcessAppService)

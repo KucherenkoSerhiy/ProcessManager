@@ -1,9 +1,9 @@
-﻿namespace ProcessManager.Application.Process.AppServices.Impl
+﻿namespace ProcessManager.Process.Application.Process.AppServices.Impl
 {
+    using Core.Patterns;
     using Domain.Process.Models;
     using Domain.Process.Services;
     using Models;
-    using Patterns;
 
     public class GetProcessAppService: IGetProcessAppService
     {

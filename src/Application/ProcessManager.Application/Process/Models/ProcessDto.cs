@@ -1,4 +1,4 @@
-﻿namespace ProcessManager.Application.Process.Models
+﻿namespace ProcessManager.Process.Application.Process.Models
 {
     using System;
     using System.Collections.Generic;

@@ -1,16 +1,16 @@
-﻿namespace ProcessManager.Domain.Process.Models
+﻿namespace ProcessManager.Process.Domain.Process.Models
 {
     using System;
     using System.Collections.Generic;
-    using DDD;
+    using Core.DDD;
+    using Core.NativeObjects.Extensions;
     using Enums;
-    using NativeObjects.Extensions;
 
     public class Process: AggregateRoot
     {
         internal Process(){}
 
-        public override string Id => $"{Name}{Status}{CreationDate}".EncodeHexadecimal();
+        public override string Id => $"{this.Name}{this.Status}{this.CreationDate}".EncodeHexadecimal();
         public string Name { get; set; }
         public ProcessStatus Status { get; set; }
         public DateTime CreationDate { get; set; }

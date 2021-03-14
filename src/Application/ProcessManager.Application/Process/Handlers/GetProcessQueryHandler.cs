@@ -1,10 +1,9 @@
-﻿namespace ProcessManager.Application.Process.Handlers
+﻿namespace ProcessManager.Process.Application.Process.Handlers
 {
     using System.Threading;
     using System.Threading.Tasks;
     using AppServices;
     using MediatR;
-    using Models;
     using Models.Queries;
     using Models.Queries.Responses;
 

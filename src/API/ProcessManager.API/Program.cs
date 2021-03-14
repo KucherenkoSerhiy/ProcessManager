@@ -1,4 +1,4 @@
-namespace ProcessManager.API
+namespace ProcessManager.Process.API
 {
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;

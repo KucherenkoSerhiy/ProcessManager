@@ -1,7 +1,7 @@
-﻿namespace ProcessManager.Application.Process.Validators
+﻿namespace ProcessManager.Process.Application.Process.Validators
 {
     using Conditions;
-    using DDD;
+    using Core.DDD;
     using Models.Queries;
 
     public class GetProcessesQueryValidator: IValidator<GetProcessesQuery>

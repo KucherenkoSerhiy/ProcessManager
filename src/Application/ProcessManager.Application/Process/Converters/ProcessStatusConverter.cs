@@ -1,8 +1,8 @@
-﻿namespace ProcessManager.Application.Process.Converters
+﻿namespace ProcessManager.Process.Application.Process.Converters
 {
     using System;
+    using Core.Patterns;
     using Enums;
-    using Patterns;
 
     public class ProcessStatusConverter : IConverter<Domain.Process.Enums.ProcessStatus, ProcessStatus>
     {

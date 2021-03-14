@@ -1,8 +1,8 @@
-﻿namespace ProcessManager.Application.Process.Validators
+﻿namespace ProcessManager.Process.Application.Process.Validators
 {
-    using DDD;
-    using Models.Commands;
     using Conditions;
+    using Core.DDD;
+    using Models.Commands;
 
     public class DeleteProcessCommandValidator: IValidator<DeleteProcessCommand>
     {

@@ -1,4 +1,4 @@
-﻿namespace ProcessManager.Application.Process.Models.Queries.Responses
+﻿namespace ProcessManager.Process.Application.Process.Models.Queries.Responses
 {
     using System.Collections.Generic;
 

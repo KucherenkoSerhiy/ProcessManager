@@ -1,4 +1,4 @@
-﻿namespace ProcessManager.Application.Process.AppServices
+﻿namespace ProcessManager.Process.Application.Process.AppServices
 {
     public interface IDeleteProcessAppService
     {

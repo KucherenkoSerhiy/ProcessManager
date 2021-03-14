@@ -1,4 +1,4 @@
-﻿namespace IoC
+﻿namespace ProcessManager.Core.IoC
 {
     using System;
     using System.Collections.Generic;

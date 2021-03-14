@@ -1,4 +1,4 @@
-﻿namespace DDD
+﻿namespace ProcessManager.Core.DDD
 {
     public interface IValidator<T>
     {

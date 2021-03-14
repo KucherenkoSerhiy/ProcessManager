@@ -1,4 +1,4 @@
-﻿namespace Patterns
+﻿namespace ProcessManager.Core.Patterns
 {
     public interface IConverter<TS, TD>
     {

@@ -1,4 +1,4 @@
-﻿namespace ProcessManager.Domain.Process.Services.Impl
+﻿namespace ProcessManager.Process.Domain.Process.Services.Impl
 {
     using Models;
 

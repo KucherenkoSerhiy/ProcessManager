@@ -1,4 +1,4 @@
-﻿namespace CQRS
+﻿namespace ProcessManager.Core.CQRS
 {
     public sealed class CommandResponse
     {

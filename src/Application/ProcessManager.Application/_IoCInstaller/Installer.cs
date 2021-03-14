@@ -1,12 +1,12 @@
-﻿namespace ProcessManager.Application._IoCInstaller
+﻿namespace ProcessManager.Process.Application._IoCInstaller
 {
-    using CQRS;
-    using DDD;
+    using Core.CQRS;
+    using Core.DDD;
+    using Core.IoC.Interface;
+    using Core.Patterns;
     using Domain.Process.Models;
-    using IoC.Interface;
     using MediatR;
     using Microsoft.Extensions.DependencyInjection;
-    using Patterns;
     using Process.AppServices;
     using Process.AppServices.Impl;
     using Process.Converters;

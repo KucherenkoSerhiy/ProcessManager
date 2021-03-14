@@ -1,4 +1,4 @@
-﻿namespace ProcessManager.Domain.Process.Enums
+﻿namespace ProcessManager.Process.Domain.Process.Enums
 {
     public enum ProcessStatus
     {

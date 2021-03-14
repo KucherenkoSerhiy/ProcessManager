@@ -1,10 +1,10 @@
-﻿namespace ProcessManager.Application.Process.Converters
+﻿namespace ProcessManager.Process.Application.Process.Converters
 {
+    using Core.Patterns;
     using Domain.Process.Models;
     using Domain.Process.Services;
     using Enums;
     using Models;
-    using Patterns;
 
     public class ProcessConverter: IConverter<Process, ProcessDto>
     {

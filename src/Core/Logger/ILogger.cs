@@ -1,4 +1,4 @@
-﻿namespace Logger
+﻿namespace ProcessManager.Core.Logger
 {
     public interface ILogger
     {

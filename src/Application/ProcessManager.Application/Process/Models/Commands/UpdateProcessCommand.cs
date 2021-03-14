@@ -1,9 +1,9 @@
-﻿namespace ProcessManager.Application.Process.Models.Commands
+﻿namespace ProcessManager.Process.Application.Process.Models.Commands
 {
     using System.Collections.Generic;
-    using CQRS;
-    using DDD;
-    using IoC;
+    using Core.CQRS;
+    using Core.DDD;
+    using Core.IoC;
     using MediatR;
 
     public class UpdateProcessCommand: IRequest<CommandResponse>

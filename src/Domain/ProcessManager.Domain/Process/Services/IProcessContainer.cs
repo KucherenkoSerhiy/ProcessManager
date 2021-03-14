@@ -1,4 +1,4 @@
-﻿namespace ProcessManager.Domain.Process.Services
+﻿namespace ProcessManager.Process.Domain.Process.Services
 {
     using System.Collections.Generic;
     using Models;

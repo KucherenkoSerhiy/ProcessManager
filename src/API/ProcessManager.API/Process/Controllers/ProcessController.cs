@@ -1,11 +1,11 @@
-﻿namespace ProcessManager.API.Process.Controllers
+﻿namespace ProcessManager.Process.API.Process.Controllers
 {
     using System;
     using System.Threading.Tasks;
     using Application.Process.Models.Commands;
     using Application.Process.Models.Queries;
     using Application.Process.Models.Queries.Responses;
-    using CQRS;
+    using Core.CQRS;
     using MediatR;
     using Microsoft.AspNetCore.Mvc;
 

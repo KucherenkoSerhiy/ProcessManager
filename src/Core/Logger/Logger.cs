@@ -1,4 +1,4 @@
-﻿namespace Logger
+﻿namespace ProcessManager.Core.Logger
 {
     using System.IO;
     using System.Reflection;

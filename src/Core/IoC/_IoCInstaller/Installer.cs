@@ -1,4 +1,4 @@
-﻿namespace IoC._IoCInstaller
+﻿namespace ProcessManager.Core.IoC._IoCInstaller
 {
     using Interface;
     using Logger;

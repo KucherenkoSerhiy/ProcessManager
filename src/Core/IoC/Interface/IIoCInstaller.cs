@@ -1,4 +1,4 @@
-﻿namespace IoC.Interface
+﻿namespace ProcessManager.Core.IoC.Interface
 {
     using Microsoft.Extensions.DependencyInjection;
 

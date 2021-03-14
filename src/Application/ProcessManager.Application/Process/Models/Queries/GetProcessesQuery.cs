@@ -1,8 +1,8 @@
-﻿namespace ProcessManager.Application.Process.Models.Queries
+﻿namespace ProcessManager.Process.Application.Process.Models.Queries
 {
     using System.Collections.Generic;
-    using DDD;
-    using IoC;
+    using Core.DDD;
+    using Core.IoC;
     using MediatR;
     using Responses;
 

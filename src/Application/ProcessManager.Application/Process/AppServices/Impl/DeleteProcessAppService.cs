@@ -1,4 +1,4 @@
-﻿namespace ProcessManager.Application.Process.AppServices.Impl
+﻿namespace ProcessManager.Process.Application.Process.AppServices.Impl
 {
     using Domain.Process.Services;
 

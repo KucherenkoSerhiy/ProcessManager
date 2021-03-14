@@ -1,8 +1,7 @@
-namespace ProcessManager.API
+namespace ProcessManager.Process.API
 {
-    using System.Reflection;
-    using IoC;
-    using Logger;
+    using Core.IoC;
+    using Core.Logger;
     using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
