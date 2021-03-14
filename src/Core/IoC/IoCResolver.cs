@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using Interface;
     using Microsoft.Extensions.DependencyInjection;
 
     public class IoCResolver

@@ -54,8 +54,6 @@ namespace ProcessManager.API
             {
                 endpoints.MapControllers();
             });
-
-            IoCResolver.Initialize(app.ApplicationServices);
         }
     }
 }
