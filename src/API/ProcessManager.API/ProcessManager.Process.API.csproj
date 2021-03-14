@@ -23,9 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Application\ProcessManager.Application\ProcessManager.Application.csproj" />
-    <ProjectReference Include="..\..\Core\CQRS\CQRS.csproj" />
-    <ProjectReference Include="..\..\Core\IoC\IoC.csproj" />
+    <ProjectReference Include="..\..\Application\ProcessManager.Application\ProcessManager.Process.Application.csproj" />
+    <ProjectReference Include="..\..\Core\CQRS\ProcessManager.Core.CQRS.csproj" />
+    <ProjectReference Include="..\..\Core\IoC\ProcessManager.Core.IoC.csproj" />
   </ItemGroup>
 
 </Project>

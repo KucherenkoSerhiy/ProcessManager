@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Process\Exceptions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\DDD\ProcessManager.Core.DDD.csproj" />
+    <ProjectReference Include="..\..\Core\IoC\ProcessManager.Core.IoC.csproj" />
+    <ProjectReference Include="..\..\Core\NativeObjects.Extensions\ProcessManager.Core.NativeObjects.Extensions.csproj" />
+  </ItemGroup>
+
+</Project>

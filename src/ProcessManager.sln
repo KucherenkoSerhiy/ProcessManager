@@ -3,29 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.API", "API\ProcessManager.API\ProcessManager.API.csproj", "{A4C4EEA5-6BA8-4BF8-949C-EB0AFC575D31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Process.API", "API\ProcessManager.API\ProcessManager.Process.API.csproj", "{A4C4EEA5-6BA8-4BF8-949C-EB0AFC575D31}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{A501034C-A56B-474E-8C1C-86B8B3D22C76}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoC", "Core\IoC\IoC.csproj", "{EB882C79-B2C3-4E7B-90D4-30BF3BF4D2C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Core.IoC", "Core\IoC\ProcessManager.Core.IoC.csproj", "{EB882C79-B2C3-4E7B-90D4-30BF3BF4D2C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logger", "Core\Logger\Logger.csproj", "{5B82ACCB-F01E-4F04-9C06-FA3D2F6E542B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Core.Logger", "Core\Logger\ProcessManager.Core.Logger.csproj", "{5B82ACCB-F01E-4F04-9C06-FA3D2F6E542B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDD", "Core\DDD\DDD.csproj", "{9DCF4004-B3E6-4913-9200-0A8B6C131622}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Core.DDD", "Core\DDD\ProcessManager.Core.DDD.csproj", "{9DCF4004-B3E6-4913-9200-0A8B6C131622}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Domain", "Domain\ProcessManager.Domain\ProcessManager.Domain.csproj", "{30919AD5-2787-42A9-9B9E-C3E3114D2916}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Process.Domain", "Domain\ProcessManager.Domain\ProcessManager.Process.Domain.csproj", "{30919AD5-2787-42A9-9B9E-C3E3114D2916}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{8C266106-EDE7-40E5-B7BE-D5BB77497219}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{89935D6B-8AEA-440E-86C3-A5325FB115A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Application", "Application\ProcessManager.Application\ProcessManager.Application.csproj", "{649E26D5-9C4A-4859-9F25-34B8BCA3FEC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Process.Application", "Application\ProcessManager.Application\ProcessManager.Process.Application.csproj", "{649E26D5-9C4A-4859-9F25-34B8BCA3FEC7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS", "Core\CQRS\CQRS.csproj", "{18422914-ECDF-4CE2-B4A3-38C64661AAD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Core.CQRS", "Core\CQRS\ProcessManager.Core.CQRS.csproj", "{18422914-ECDF-4CE2-B4A3-38C64661AAD6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NativeObjects.Extensions", "Core\NativeObjects.Extensions\NativeObjects.Extensions.csproj", "{B0895994-6F14-4D29-8161-B714977F2451}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessManager.Core.NativeObjects.Extensions", "Core\NativeObjects.Extensions\ProcessManager.Core.NativeObjects.Extensions.csproj", "{B0895994-6F14-4D29-8161-B714977F2451}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patterns", "Core\Patterns\Patterns.csproj", "{905EF59C-D59B-463E-8757-8E5BF4C46570}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessManager.Core.Patterns", "Core\Patterns\ProcessManager.Core.Patterns.csproj", "{905EF59C-D59B-463E-8757-8E5BF4C46570}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
